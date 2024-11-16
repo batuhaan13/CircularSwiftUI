@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var firstCirclePercentage : Double = 0
     @State var secondCirclePercentage : Double = 0
     @State var thirdCirclePercentage : Double = 0
+    @State var fourthCirclePercentage : Double = 0
     
     var body: some View {
         ZStack {
@@ -44,6 +45,16 @@ struct ContentView: View {
                         
                     } else {
                         self.thirdCirclePercentage = 0
+                    }
+                }
+            Circular(lineWidth: 13, backgroundColor: Color.red.opacity(1.5), foregroundColor: Color.secondary, percentage: fourthCirclePercentage)
+                .frame(width: 75, height: 55)
+                .onTapGesture {
+                    if self.fourthCirclePercentage == 0 {
+                        self.fourthCirclePercentage = 100
+                        
+                    } else {
+                        self.fourthCirclePercentage = 0
                     }
                 }
         }
